@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School District Quality Dashboard</title>
+  <meta name="description" content="Browse school district quality scores, graduation rates, and spending data.">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="page-header">
+      <p class="eyebrow">AI Schools Workshop</p>
+      <h1>School District Quality Dashboard</h1>
+      <p class="page-description">
+        Explore district quality scores, compare graduation rates, and review spending data across states.
+      </p>
+    </header>
+
+    <section class="controls-panel" aria-labelledby="filters-heading">
+      <div class="section-heading">
+        <h2 id="filters-heading">Filter and sort districts</h2>
+        <p>Choose a state, change the sort order, or refresh the latest district results.</p>
+      </div>
+
+      <form class="controls" aria-label="District filters" onsubmit="return false;">
+        <div class="control-group">
+          <label for="stateFilter">State</label>
+          <select id="stateFilter" name="state">
+            <option value="">All states</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="sortOrder">Sort by quality score</label>
+          <select id="sortOrder" name="sort">
+            <option value="desc">Highest to lowest</option>
+            <option value="asc">Lowest to highest</option>
+          </select>
+        </div>
+
+        <div class="control-group control-action">
+          <button type="button" id="refreshButton">Refresh data</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="status-panel" aria-live="polite">
+      <h2 class="visually-hidden">Results status</h2>
+      <p id="resultsSummary">Loading district results...</p>
+      <p id="errorMessage" role="alert"></p>
+      <p id="loadingMessage">Loading data...</p>
+    </section>
+
+    <section class="table-panel" aria-labelledby="table-heading">
+      <div class="section-heading">
+        <h2 id="table-heading">District results</h2>
+        <p>Districts are shown with quality, graduation, spending, and student-teacher information.</p>
+      </div>
+
+      <div class="table-wrapper">
+        <table id="districtTable">
+          <caption class="visually-hidden">School district quality results table</caption>
+          <thead>
+            <tr>
+              <th scope="col">District Name</th>
+              <th scope="col">State</th>
+              <th scope="col">Quality Score</th>
+              <th scope="col">Graduation Rate</th>
+              <th scope="col">Expenditure Per Pupil</th>
+              <th scope="col">Student-Teacher Ratio</th>
+            </tr>
+          </thead>
+          <tbody id="districtTableBody">
+            <tr>
+              <td colspan="6">District data will appear here.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="/main.js"></script>
+</body>
+</html>

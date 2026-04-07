@@ -1,11 +1,76 @@
-District Name,State,Student_Teacher_Ratio,Expenditure_Per_Pupil,Grad_Rate
-Springfield Public Schools,IL,15.8,14250,89
-Riverview Unified School District,CA,21.3,11840,84
-Pine Hills School District,NC,16.9,10320,91
-Lakeside Public Schools,MI,17.5,12610,87
-Mesa Valley District,AZ,19.8,9540,82
-Brookfield County Schools,GA,14.7,11110,93
-Cedar Grove Public Schools,OH,18.4,10890,86
-Maple Ridge School District,WA,17.1,15120,90
-Red Rock Unified,NM,20.6,9870,81
-Harbor Point Schools,MA,13.9,16840,95
+District Name,State,Student_Teacher_Ratio,Expenditure_Per_Pupil,Grad_Rate,Latitude,Longitude
+Springfield Public Schools,IL,15.8,14250,89,39.7817,-89.6501
+Riverview Unified School District,CA,21.3,11840,84,34.0522,-118.2437
+Pine Hills School District,NC,16.9,10320,91,35.7796,-78.6382
+Lakeside Public Schools,MI,17.5,12610,87,42.7325,-84.5555
+Mesa Valley District,AZ,19.8,9540,82,33.4152,-111.8315
+Brookfield County Schools,GA,14.7,11110,93,33.7490,-84.3880
+Cedar Grove Public Schools,OH,18.4,10890,86,39.9612,-82.9988
+Maple Ridge School District,WA,17.1,15120,90,47.6062,-122.3321
+Red Rock Unified,NM,20.6,9870,81,35.0844,-106.6504
+Harbor Point Schools,MA,13.9,16840,95,42.3601,-71.0589
+Hudson Valley District,NY,14.2,18200,94,41.5034,-74.0104
+Liberty County Schools,TX,17.6,10900,88,29.7604,-95.3698
+Desert Sands District,NV,20.1,9700,83,36.1699,-115.1398
+Pacific Heights Schools,CA,13.5,19500,96,37.7749,-122.4194
+Midtown Public Schools,NY,15.0,21000,92,40.7128,-74.0060
+Bluegrass District,KY,16.8,11500,87,38.0406,-84.5037
+Granite Hills Schools,UT,18.0,10200,85,40.7608,-111.8910
+Evergreen Valley District,CO,14.9,14800,91,39.7392,-104.9903
+Suncoast Public Schools,FL,19.5,9800,84,27.9506,-82.4572
+Riverbend District,MO,17.2,11300,88,38.6270,-90.1994
+Northern Lights Schools,MN,15.6,13500,90,44.9778,-93.2650
+Twin Rivers District,LA,20.3,9500,82,29.9511,-90.0715
+Prairie State Schools,KS,16.9,10800,86,39.0473,-95.6752
+Appalachian District,TN,18.7,9900,83,36.1627,-86.7816
+Coastal Carolina Schools,SC,17.3,10400,87,32.7765,-79.9311
+Iron Range District,WI,15.9,12000,89,43.0389,-87.9065
+Capital City Schools,DC,13.8,22000,95,38.9072,-77.0369
+Frontier Public Schools,MT,14.5,12500,90,46.5891,-112.0391
+Great Plains District,NE,16.2,11000,88,41.2565,-95.9345
+Red River Schools,ND,15.7,11800,89,46.8772,-96.7898
+Black Hills District,SD,14.8,11700,90,44.0805,-103.2310
+Ozark Mountain Schools,AR,18.3,9700,84,36.1867,-94.1288
+Delta Region Schools,MS,19.6,9400,81,32.2988,-90.1848
+Gulf Coast District,AL,18.9,9600,82,30.6954,-88.0399
+Blue Ridge Schools,VA,16.5,13000,89,37.5407,-77.4360
+New England District,CT,14.1,18500,94,41.7658,-72.6734
+Granite State Schools,NH,13.9,19000,95,43.2081,-71.5376
+Green Mountain District,VT,13.7,19500,96,44.2601,-72.5754
+Pioneer Valley Schools,MA,14.0,18800,95,42.2626,-71.8023
+Empire State District,NY,15.3,20000,92,42.6526,-73.7562
+Garden State Schools,NJ,14.4,21000,93,40.2206,-74.7597
+Keystone District,PA,15.8,17500,91,40.2732,-76.8867
+First State Schools,DE,14.9,16000,90,39.1582,-75.5244
+Chesapeake Schools,MD,15.2,18000,92,38.9784,-76.4922
+Peach State District,GA,17.5,11000,87,33.5186,-86.8104
+Sunshine District,FL,19.2,9900,84,26.1224,-80.1373
+Lone Star Schools,TX,18.1,10500,86,30.2672,-97.7431
+Desert Ridge Schools,AZ,20.0,9700,83,33.4484,-112.0740
+Golden State District,CA,14.6,18500,94,36.7783,-119.4179
+Cascade Valley Schools,WA,15.4,15000,90,47.7511,-120.7401
+Beaver State Schools,OR,16.3,14000,88,43.8041,-120.5542
+Silver State District,NV,19.7,9600,82,39.1638,-119.7674
+Rocky Mountain Schools,CO,15.1,14500,91,39.5501,-105.7821
+Utah Valley District,UT,17.8,10200,85,39.3210,-111.0937
+Idaho Plains Schools,ID,16.6,10800,87,44.0682,-114.7420
+Big Sky District,MT,14.7,12000,90,46.8797,-110.3626
+Wyoming Range Schools,WY,14.9,11800,89,43.0759,-107.2903
+Dakota Prairie Schools,ND,15.5,11500,89,47.5515,-101.0020
+Cornhusker District,NE,16.1,11000,88,41.4925,-99.9018
+Sunflower Schools,KS,16.8,10700,86,39.0119,-98.4842
+Sooner State District,OK,18.5,9900,84,35.0078,-97.0929
+Lakes Region Schools,MN,15.6,13500,90,46.7296,-94.6859
+Badger State District,WI,15.9,12500,89,44.5000,-89.5000
+Great Lakes Schools,MI,16.7,13000,88,44.3148,-85.6024
+Hoosier District,IN,16.4,12000,87,40.2672,-86.1349
+Buckeye Schools,OH,17.2,11800,86,40.4173,-82.9071
+Bluegrass Region District,KY,16.8,11500,87,37.8393,-84.2700
+Volunteer State Schools,TN,18.3,10000,84,35.5175,-86.5804
+Tar Heel District,NC,17.1,10400,87,35.7596,-79.0193
+Palmetto Schools,SC,17.6,10200,86,33.8361,-81.1637
+Magnolia District,MS,19.5,9500,82,32.3547,-89.3985
+Pelican State Schools,LA,20.2,9400,81,30.9843,-91.9623
+Cotton State District,AL,18.9,9600,82,32.3182,-86.9023
+Volunteer Valley Schools,TN,18.1,10100,85,36.1627,-86.7816
+Bluebonnet District,TX,18.0,10500,86,31.9686,-99.9018

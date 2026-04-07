@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>School District Explorer</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fb;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 15px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      background-color: #2f65d9;
+      color: white;
+    }
+
+    #map {
+      height: 90vh;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 2px solid #eee;
+    }
+
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+    }
+
+    tr:hover {
+      background-color: #f2f6ff;
+    }
+
+    #tableContainer {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<button onclick="showMap()">Map View</button>
+<button onclick="showTable()">Table View</button>
+
+<div id="map"></div>
+
+<div id="tableContainer" class="container">
+
+  <h2>District Results</h2>
+
+  <div class="card">
+    <table id="districtTable">
+      <thead>
+        <tr>
+          <th>District</th>
+          <th>State</th>
+          <th>City</th>
+          <th>Enrollment</th>
+          <th>Schools</th>
+          <th>Student-Teacher Ratio</th>
+          <th>Spending / Student</th>
+          <th>Locale</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+
+<script>
+  function showMap() {
+    document.getElementById("map").style.display = "block";
+    document.getElementById("tableContainer").style.display = "none";
+  }
+
+  function showTable() {
+    document.getElementById("map").style.display = "none";
+    document.getElementById("tableContainer").style.display = "block";
+  }
+
+  const map = L.map('map').setView([39.5, -98.35], 4);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+  fetch('http://localhost:3000/districts')
+    .then(res => res.json())
+    .then(districts => {
+
+      // 🔥 HEAT MAP (based on spending)
+      const heatData = districts.map(d => [
+        d.latitude,
+        d.longitude,
+        d.perPupilSpending / 20000
+      ]);
+
+      L.heatLayer(heatData, { radius: 25 }).addTo(map);
+
+      // 🔴 MARKERS
+      districts.forEach(d => {
+
+        const marker = L.circleMarker([d.latitude, d.longitude], {
+          radius: 8,
+          color: getColor(d.perPupilSpending),
+          fillOpacity: 0.7
+        }).addTo(map);
+
+        marker.bindPopup(`
+          <b>${d.name}</b><br/>
+          ${d.city}, ${d.state}<br/>
+          Enrollment: ${d.enrollment}<br/>
+          Spending: $${d.perPupilSpending}
+        `);
+      });
+
+      // 📊 TABLE
+      const tableBody = document.querySelector("#districtTable tbody");
+
+      districts.forEach(d => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td>${d.name}</td>
+          <td>${d.state}</td>
+          <td>${d.city}</td>
+          <td>${d.enrollment}</td>
+          <td>${d.schoolCount}</td>
+          <td>${d.studentTeacherRatio}</td>
+          <td>$${d.perPupilSpending}</td>
+          <td>${d.localeBucket}</td>
+        `;
+
+        tableBody.appendChild(row);
+      });
+
+    });
+
+  function getColor(spending) {
+    if (spending > 18000) return "green";
+    if (spending > 13000) return "orange";
+    return "red";
+  }
+
+</script>
+
+</body>
+</html>

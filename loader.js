@@ -2,16 +2,26 @@ const fs = require('fs')
 const path = require('path')
 const csv = require('csv-parser')
 
-const DEFAULT_DATA_DIR = path.join(__dirname, 'data')
-const DEFAULT_FILE_NAME = 'mock_districts.csv'
+const DEFAULT_DATA_DIR = path.join(__dirname, 'data', 'processed')
+const DEFAULT_FILE_NAME = 'ccd-mvp-snapshot.csv'
 
 function normalizeDistrict(row) {
   return {
-    districtName: row['District Name'] || '',
-    state: row.State || '',
-    studentTeacherRatio: Number(row.Student_Teacher_Ratio),
-    expenditurePerPupil: Number(row.Expenditure_Per_Pupil),
-    gradRate: Number(row.Grad_Rate),
+    id: row.id,
+    name: row.name,
+    state: row.state,
+    city: row.city,
+    county: row.county,
+    localeCode: row.localeCode,
+    localeBucket: row.localeBucket,
+    latitude: Number(row.latitude),
+    longitude: Number(row.longitude),
+    enrollment: Number(row.enrollment),
+    teacherFte: Number(row.teacherFte),
+    studentTeacherRatio: Number(row.studentTeacherRatio),
+    perPupilSpending: Number(row.perPupilSpending),
+    schoolCount: Number(row.schoolCount),
+    sourceYear: row.sourceYear
   }
 }
 
